@@ -7,6 +7,11 @@ target 'FirebaseSocial' do
 
   # Pods for FirebaseSocial
   pod 'Firebase/Core'
-
+  pod 'Firebase/Auth'
+  pod 'GoogleSignIn'
+  pod 'FBSDKCoreKit'
+  pod 'FBSDKShareKit'
+  pod 'FBSDKLoginKit'
+  pod 'TwitterKit'
 
 end

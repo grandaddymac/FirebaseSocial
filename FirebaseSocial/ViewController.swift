@@ -7,14 +7,26 @@
 //
 
 import UIKit
+import Firebase
+import GoogleSignIn
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, GIDSignInUIDelegate {
 
+    // Outlets
+    
+    @IBOutlet weak var userInfoLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    GIDSignIn.sharedInstance()?.uiDelegate = self
+    
     }
 
-
+    @IBAction func googleSignInTapped(_ sender: Any) {
+        GIDSignIn.sharedInstance()?.signIn()
+    }
+    
+    @IBAction func logoutTapped(_ sender: Any) {
+    }
 }
 
