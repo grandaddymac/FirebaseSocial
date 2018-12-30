@@ -47,16 +47,32 @@
                                     <action selector="googleSignInTapped:" destination="BYZ-38-t0r" eventType="valueChanged" id="qSF-rq-EoE"/>
                                 </connections>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="59I-Dy-WBa">
+                                <rect key="frame" x="20" y="100" width="335" height="40"/>
+                                <color key="backgroundColor" red="0.91764705882352937" green="0.2627450980392157" blue="0.20784313725490194" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Ztz-sQ-0Oc"/>
+                                </constraints>
+                                <state key="normal" title="Login Google">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="customGoogleTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yqM-3V-IO3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="8eh-5r-q3H" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="0qW-oA-WSB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="59I-Dy-WBa" secondAttribute="trailing" constant="20" id="57B-rh-xl0"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rr7-1x-CAQ" secondAttribute="trailing" constant="20" id="9cU-u7-mdk"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="rr7-1x-CAQ" secondAttribute="bottom" constant="20" id="Af0-ZB-KUw"/>
+                            <constraint firstItem="59I-Dy-WBa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Bot-rL-z8h"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8eh-5r-q3H" secondAttribute="trailing" constant="20" id="KWX-vL-NUV"/>
                             <constraint firstItem="8eh-5r-q3H" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="SDw-Mm-Rpg"/>
                             <constraint firstItem="bnF-mC-3jg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ajT-qy-Baa"/>
                             <constraint firstItem="rr7-1x-CAQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="bGS-MZ-0cb"/>
+                            <constraint firstItem="59I-Dy-WBa" firstAttribute="top" secondItem="8eh-5r-q3H" secondAttribute="bottom" constant="20" id="byJ-c4-Ktg"/>
                             <constraint firstItem="rr7-1x-CAQ" firstAttribute="top" secondItem="bnF-mC-3jg" secondAttribute="bottom" constant="8" id="dsd-vq-GKg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bnF-mC-3jg" secondAttribute="trailing" constant="20" id="ngQ-zf-wTe"/>
                         </constraints>
