@@ -26,6 +26,14 @@
 				<string>com.googleusercontent.apps.599136443429-k8boa755av436qjd0e5ckcvvq1db4puk</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>twitterkit-QMZmqGKbNOb634ephmxOhInBo</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
@@ -51,6 +59,15 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>consumerKey</key>
+	<string>QMZmqGKbNOb634ephmxOhInBo</string>
+	<key>consumerSecret</key>
+	<string>dvmkYl2mcr9b5VyPaAAT0QGTU2IOXfzszB7h7hV46ArbUMoWR1</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>twitter</string>
+		<string>twitterauth</string>
 	</array>
 </dict>
 </plist>

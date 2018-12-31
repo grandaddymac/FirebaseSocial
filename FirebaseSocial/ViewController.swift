@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import GoogleSignIn
+import TwitterKit
 
 class ViewController: UIViewController, GIDSignInUIDelegate {
 
@@ -16,11 +17,28 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
     
     @IBOutlet weak var userInfoLabel: UILabel!
     
+    @IBOutlet weak var twitterButtonView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Google
     GIDSignIn.sharedInstance()?.uiDelegate = self
-    
+        //Twitter
+        let loginTwiterButton = TWTRLogInButton { (session, error) in
+            if let error = error {
+                debugPrint("Could not login twitter: \(error)")
+            }
+            
+            if let session = session {
+                let credential = TwitterAuthProvider.credential(withToken: session.authToken, secret: session.authTokenSecret)
+                self.firebaseLogin(credential)
+            }
+        }
+        //loginTwiterButton.center.x = twitterButtonView.center.x
+        //twitterButtonView.addsubView(loginTwiterButton)
+        
+
     }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         Auth.auth().addStateDidChangeListener { (auth, user) in
@@ -32,6 +50,8 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
         }
     }
 
+    //Google
+    
     @IBAction func googleSignInTapped(_ sender: Any) {
         GIDSignIn.sharedInstance()?.signIn()
     }
@@ -40,8 +60,22 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
         GIDSignIn.sharedInstance()?.signIn()
 
     }
+    
+    //Twitter
 
-
+    @IBAction func customTwitterPressed(_ sender: Any) {
+        TWTRTwitter.sharedInstance().logIn { (session, error) in
+            if let error = error {
+                debugPrint("Could not login twitter: \(error)")
+            }
+            
+            if let session = session {
+                let credential = TwitterAuthProvider.credential(withToken: session.authToken, secret: session.authTokenSecret)
+                self.firebaseLogin(credential)
+            }
+        }
+    }
+    
     @IBAction func logoutTapped(_ sender: Any) {
         let firebaseAuth = Auth.auth()
         do {
